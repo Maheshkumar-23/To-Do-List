@@ -33,16 +33,11 @@
 </head>
 <body>
     <h1>To-Do List Application</h1>
-
     <input type="text" id="taskInput" placeholder="Add a new task">
     <button onclick="addTask()">Add Task</button>
-
     <ul id="taskList"></ul>
-
     <script>
         let tasks = [];
-
-        
         function addTask() {
             const taskInput = document.getElementById("taskInput");
             const taskText = taskInput.value.trim();
@@ -55,7 +50,6 @@
                 alert("Task cannot be empty!");
             }
         }
-
         function deleteTask(index) {
             tasks.splice(index, 1); 
             renderTasks(); 
@@ -69,7 +63,6 @@
                 alert("Task cannot be empty!");
             }
         }
-
         function renderTasks() {
             const taskList = document.getElementById("taskList");
             taskList.innerHTML = ''; 
@@ -86,13 +79,11 @@
                 updateButton.onclick = function() {
                     updateTask(index);
                 };
-
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Delete";
                 deleteButton.onclick = function() {
                     deleteTask(index);
                 };
-
                 li.appendChild(taskText);
                 li.appendChild(updateButton);
                 li.appendChild(deleteButton);
